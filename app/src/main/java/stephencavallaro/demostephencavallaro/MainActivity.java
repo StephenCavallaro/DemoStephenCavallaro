@@ -26,11 +26,14 @@ public class MainActivity extends AppCompatActivity {
         bt1 = (ImageButton) findViewById(R.id.bt1);
         bt3 = (ImageButton) findViewById(R.id.bt3);
     }
+
     private void initialListener() {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Button1 Was Clicked", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(v.getContext(),ViewPagerActivity.class);
+                startActivity(intent);
             }
         });
 
