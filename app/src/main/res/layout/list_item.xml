@@ -15,7 +15,8 @@
         android:layout_centerVertical="true"
         android:text="@string/app_name"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"/>
+        android:background="@drawable/bt_bg_releassed"
+        android:textSize="26sp"/>
     <TextView
         android:id="@+id/list_view_tv2"
         android:layout_width="wrap_content"
@@ -25,7 +26,7 @@
         android:hint="@string/hint"
         android:text="@string/app_name"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"/>
+        android:textSize="26sp"/>
 
     <TextView
         android:id="@+id/list_view_tv3"
@@ -33,11 +34,12 @@
         android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:gravity="center"
+        android:gravity="right"
+        android:background="@drawable/bt_bg_releassed"
         android:hint="@string/hint"
         android:text="@string/app_name"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"/>
+        android:textSize="26sp"/>
 
 
 

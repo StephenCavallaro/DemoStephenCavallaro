@@ -1,5 +1,6 @@
 package stephencavallaro.demostephencavallaro;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -18,30 +19,37 @@ import stephencavallaro.demostephencavallaro.Adapter.ViewPagerAdapter;
 import stephencavallaro.demostephencavallaro.fragment.ContentFragment;
 import stephencavallaro.demostephencavallaro.fragment.HistoryFragment;
 import stephencavallaro.demostephencavallaro.fragment.LoginFragment;
+import stephencavallaro.demostephencavallaro.util.UtilLog;
 
 public class ViewPagerActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
     private TabLayout tabLayout;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
 
-    //public ViewPagerActivity(TabLayout tabLayout) {
-    //    this.tabLayout = tabLayout;
-    //}
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager);
+
+        Intent intent =getIntent();
+        Bundle bundle = intent.getExtras();
+        String message = intent.getStringExtra("key");
+        int fakeNumber = bundle.getInt("fake",0);
+        int Number = bundle.getInt("Integer",0);
+        Book book = (Book) bundle.getSerializable("book");
+
+        UtilLog.logD("ViewPagerActivity, value is: ", message);
+        UtilLog.logD("ViewPagerActivity, number is: ", "" +Number);
+        UtilLog.logD("ViewPagerActivity, fake number is: ", String.valueOf(fakeNumber));
+
+        UtilLog.logD("ViewPagerActivity, book author is: ",book.getAuthor());
+        UtilLog.logD("ViewPagerActivity, book name is: ",book.getName());
+
         initial();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void initial() {
@@ -55,5 +63,13 @@ public class ViewPagerActivity extends AppCompatActivity {
 
        tabLayout =(TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("message","ViePager");
+        setResult(RESULT_OK, intent);
+        super.onBackPressed();
+
     }
 }

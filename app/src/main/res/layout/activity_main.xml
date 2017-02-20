@@ -36,7 +36,7 @@ tools:context="stephencavallaro.demostephencavallaro.MainActivity">
     <ImageButton
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@android:color/white"
+        android:background="@drawable/bt_style_xml"
         android:layout_marginRight="12dp"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
@@ -64,7 +64,7 @@ tools:context="stephencavallaro.demostephencavallaro.MainActivity">
         />
 
     <ImageButton
-        android:onClick="onClick"
+        android:id="@+id/bt2"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_margin="6dp"
