@@ -21,7 +21,7 @@ public class CustomDialog extends Dialog {
     private ICustomDialogEventListener listener;
 
  public interface ICustomDialogEventListener {
-     public void onClickListener();
+     void onClickListener();
  }
 
     public CustomDialog(@NonNull Context context, ICustomDialogEventListener listener) {

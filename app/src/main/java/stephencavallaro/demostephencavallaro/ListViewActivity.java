@@ -24,8 +24,13 @@ import java.util.ArrayList;
 import stephencavallaro.demostephencavallaro.Adapter.ListViewAdapter;
 import stephencavallaro.demostephencavallaro.Adapter.ViewPagerAdapter;
 import stephencavallaro.demostephencavallaro.fragment.ContentFragment;
+import stephencavallaro.demostephencavallaro.fragment.FiveFragment;
+import stephencavallaro.demostephencavallaro.fragment.FourFragment;
 import stephencavallaro.demostephencavallaro.fragment.HistoryFragment;
 import stephencavallaro.demostephencavallaro.fragment.LoginFragment;
+import stephencavallaro.demostephencavallaro.fragment.OneFragment;
+import stephencavallaro.demostephencavallaro.fragment.ThreeFragment;
+import stephencavallaro.demostephencavallaro.fragment.TwoFragment;
 
 public class ListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView listView;
@@ -33,7 +38,7 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
 
     private ViewPager viewPager;
     private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
-    private TabLayout tabLayout;
+    //private TabLayout tabLayout;
     //private GoogleApiClient client;
 
 
@@ -53,37 +58,42 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     }
     private void initialView() {
         listView = (ListView) findViewById(R.id.list_view);
-
-        //setContentView(R.layout.activity_view_pager);
-        //initial();
-        //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-
         View view = getLayoutInflater().inflate(R.layout.list_view_header, null);
         LinearLayout listViewHeader = (LinearLayout) view.findViewById(R.id.list_view_header);
-
         ListViewAdapter listViewAdapter = new ListViewAdapter(this, listResult);
-       listView.addHeaderView(listViewHeader);
+        listView.addHeaderView(listViewHeader);
+
         TextView tv = new TextView(this);
         tv.setText("We have no more content.");
         tv.setTextSize(28);
         tv.setGravity(Gravity.CENTER);
         listView.addFooterView(tv);
+
+
+        viewPager = (ViewPager) view.findViewById(R.id.view_pager);
+        fragmentList.add(new LoginFragment());
+        fragmentList.add(new ContentFragment());
+        fragmentList.add(new HistoryFragment());
+        fragmentList.add(new OneFragment());
+        fragmentList.add(new TwoFragment());
+        fragmentList.add(new ThreeFragment());
+        fragmentList.add(new FourFragment());
+        fragmentList.add(new FiveFragment());
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this.getSupportFragmentManager());
+        viewPagerAdapter.setContent(fragmentList);
+        viewPager.setAdapter(viewPagerAdapter);
+
         listView.setAdapter(listViewAdapter);
         listView.setOnItemClickListener(this);
-    }
-//    private void initial() {
-//        viewPager = (ViewPager) findViewById(R.id.view_pager);
-//        fragmentList.add(new LoginFragment());
-//        fragmentList.add(new ContentFragment());
-//        fragmentList.add(new HistoryFragment());
-//        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this.getSupportFragmentManager());
-//        viewPagerAdapter.setContent(fragmentList);
-//        viewPager.setAdapter(viewPagerAdapter);
+
 //
 //        tabLayout =(TabLayout) findViewById(R.id.tab_layout);
 //        tabLayout.setupWithViewPager(viewPager);
 //
-//    }
+    }
+
+//    private void initial() {
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

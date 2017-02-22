@@ -2,15 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light"
+    android:background="@android:color/holo_blue_light"
     tools:context="stephencavallaro.demostephencavallaro.fragment.ContentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerInside"
-        android:src="@mipmap/pic1"
+        android:src="@mipmap/pic1"/>
     />
 // add an image view for each pager and replace viewheader with view pager
 </FrameLayout>

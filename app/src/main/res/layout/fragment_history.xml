@@ -5,11 +5,9 @@
     android:background="@android:color/holo_red_light"
     tools:context="stephencavallaro.demostephencavallaro.fragment.HistoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:background="@android:color/black"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:scaleType="centerInside"
+       android:src="@mipmap/lion"/>
 </FrameLayout>
