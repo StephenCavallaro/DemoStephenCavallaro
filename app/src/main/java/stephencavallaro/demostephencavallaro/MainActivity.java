@@ -22,12 +22,22 @@ public class MainActivity extends BaseActivity {
 
     private ImageButton bt1;
     private ImageButton bt3;
+    private ImageButton b5x;
+
+
 
     @OnClick(R.id.bt2)
     public void button2Click() {
         Intent intent = new Intent(this, DialogActivity.class);
         startActivityForResult(intent, 2);
     }
+
+    @OnClick(R.id.b5x)
+    public void button5Click() {
+        Intent intent = new Intent(this, LaunchActivity.class);
+        startActivityForResult(intent, 4);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -40,6 +50,8 @@ public class MainActivity extends BaseActivity {
     private void initialView(){
         bt1 = (ImageButton) findViewById(R.id.bt1);
         bt3 = (ImageButton) findViewById(R.id.bt3);
+        b5x = (ImageButton) findViewById(R.id.b5x);
+
     }
 
     private void initialListener() {
@@ -90,6 +102,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case 3:
                 toastShort("ListView");
+                break;
+            case 4:
+                toastShort("LaunchExample");
                 break;
             default:
         }

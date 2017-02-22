@@ -19,7 +19,14 @@
         <activity android:name=".ListViewActivity" />
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".DialogActivity" />
-        <activity android:name=".BaseActivity">
+        <activity android:name=".LaunchActivity" />
+        <activity android:name=".BaseActivity" />
+            <activity
+                android:launchMode="singleTask" />
+            <activity
+                android:launchMode="singleTop" />
+            <activity
+                android:launchMode="singleInstance" />
         </activity>
     </application>
 

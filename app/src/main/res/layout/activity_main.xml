@@ -23,6 +23,7 @@ tools:context="stephencavallaro.demostephencavallaro.MainActivity">
         android:textColor="@color/white"/>
 
     <ImageButton
+        android:id="@+id/b5x"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@android:color/transparent"

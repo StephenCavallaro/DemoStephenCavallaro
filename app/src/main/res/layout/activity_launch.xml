@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_launch"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="stephencavallaro.demostephencavallaro.LaunchActivity">
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@android:color/holo_blue_bright">
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_green_light">
+
+    <ImageButton
+        android:id="@+id/b1x"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+
+        />
+
+
+    <ImageButton
+        android:id="@+id/b2x"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+
+        />
+
+    <ImageButton
+        android:id="@+id/b3x"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+
+        />
+
+    <ImageButton
+        android:id="@+id/b4x"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+
+        />
+</LinearLayout>
+
+</RelativeLayout>
