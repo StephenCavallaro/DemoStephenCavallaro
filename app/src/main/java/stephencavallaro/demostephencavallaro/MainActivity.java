@@ -24,6 +24,10 @@ public class MainActivity extends BaseActivity {
     private ImageButton bt3;
     private ImageButton b5x;
 
+    @OnClick(R.id.main_timer_bt)
+    public void toTimer(){
+        toActivity(TimerActivity.class);
+    }
 
 
     @OnClick(R.id.bt2)
@@ -47,6 +51,8 @@ public class MainActivity extends BaseActivity {
         initialListener();
         ButterKnife.bind(this);
     }
+
+
     private void initialView(){
         bt1 = (ImageButton) findViewById(R.id.bt1);
         bt3 = (ImageButton) findViewById(R.id.bt3);

@@ -4,10 +4,12 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.os.Handler;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,22 @@ import stephencavallaro.demostephencavallaro.dialog.CustomDialog;
 public class DialogActivity extends BaseActivity {
 
     private int checkedID;
+    private final int DIALOG = 12345;
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case DIALOG:
+                    Bundle bundle = msg.getData();
+                    String s = bundle.getString("msg");
+                    toastShort("dialog message:" + s);
+                    break;
+                default:
+            }
+            super.handleMessage(msg);
+        }
+    };
+
 
     @BindView(R.id.rdg) RadioGroup radioGroup;
     @OnClick(R.id.dialog_ok)
@@ -101,6 +119,14 @@ private void customDialog() {
                         e.printStackTrace();
                     }
                 }
+                //toastShort();
+                Bundle bundle = new Bundle();
+                bundle.putString("msg","download sucess");
+                //Message msg = new Message();
+                Message msg = Message.obtain();
+                msg.what = DIALOG;
+                msg.setData(bundle);
+                mHandler.sendMessage(msg);
                 progressDialog.cancel();
             }
         }).start();
