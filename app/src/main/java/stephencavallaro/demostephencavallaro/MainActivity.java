@@ -22,7 +22,7 @@ public class MainActivity extends BaseActivity {
 
     private ImageButton bt1;
     private ImageButton bt3;
-    private ImageButton b5x;
+    private ImageButton bt5;
 
     @OnClick(R.id.main_timer_bt)
     public void toTimer(){
@@ -36,11 +36,21 @@ public class MainActivity extends BaseActivity {
         startActivityForResult(intent, 2);
     }
 
-    @OnClick(R.id.b5x)
+
+
+    @OnClick(R.id.bt5)
     public void button5Click() {
-        Intent intent = new Intent(this, LaunchActivity.class);
+        Intent intent = new Intent(this, ActivityA.class);
         startActivityForResult(intent, 4);
     }
+
+//    @OnClick(R.id.b5x)
+//    public void button5Click() {
+//        Intent intent = new Intent(this, LaunchActivity.class);
+//        startActivityForResult(intent, 4);
+//    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +66,7 @@ public class MainActivity extends BaseActivity {
     private void initialView(){
         bt1 = (ImageButton) findViewById(R.id.bt1);
         bt3 = (ImageButton) findViewById(R.id.bt3);
-        b5x = (ImageButton) findViewById(R.id.b5x);
-
+        bt5 = (ImageButton) findViewById(R.id.bt5);
     }
 
     private void initialListener() {
@@ -94,6 +103,16 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
+//    bt5.setOnClickListener(new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            Intent intent = new Intent(v.getContext(),ActivityA.class);
+//            startActivity(intent);
+//
+//        }
+//    });
+//}
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){

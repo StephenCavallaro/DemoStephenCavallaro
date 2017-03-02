@@ -35,6 +35,7 @@ tools:context="stephencavallaro.demostephencavallaro.MainActivity">
         />
 
     <ImageButton
+        android:id="@+id/bt5"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/bt_style_xml"

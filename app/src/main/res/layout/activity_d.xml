@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="D"
+        android:layout_centerInParent="true"
+        android:gravity="center|bottom"
+        android:textSize="450sp"/>
+
+    <LinearLayout
+        android:id="@+id/launch_bar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@android:color/black">
+
+        <Button
+            android:id="@+id/btt1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="toA"
+            />
+
+        <Button
+            android:id="@+id/btt2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="toB"
+            />
+
+        <Button
+            android:id="@+id/btt3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="toC"
+            />
+
+        <Button
+            android:id="@+id/btt4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="toD"
+            />
+    </LinearLayout>
+</RelativeLayout>
