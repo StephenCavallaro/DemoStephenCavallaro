@@ -37,3 +37,4 @@ public class CustomDialog extends Dialog {
         ButterKnife.bind(this);
     }
 }
+

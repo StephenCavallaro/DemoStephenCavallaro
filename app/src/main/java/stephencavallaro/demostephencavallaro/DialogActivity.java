@@ -21,7 +21,7 @@ import stephencavallaro.demostephencavallaro.dialog.CustomDialog;
 public class DialogActivity extends BaseActivity {
 
     private int checkedID;
-    private final int DIALOG = 12345;
+    private final int DIALOG = 1;
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

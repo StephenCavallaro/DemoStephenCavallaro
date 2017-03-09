@@ -100,15 +100,41 @@ tools:context="stephencavallaro.demostephencavallaro.MainActivity">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
+        android:orientation="horizontal"
         >
 
         <Button
             android:id="@+id/main_timer_bt"
             android:layout_width="100dp"
             android:layout_height="60dp"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
             android:text="Timer"
             android:textAllCaps="false"
             android:textSize="20sp"/>
 
+        <Button
+            android:id="@+id/main_animator_bt"
+            android:layout_width="150dp"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:text="Animator"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/dialog2Activity"
+            android:layout_width="200dp"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:text="dialog2Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+
     </FrameLayout>
+
 </RelativeLayout>
