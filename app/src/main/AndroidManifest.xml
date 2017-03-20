@@ -20,11 +20,11 @@
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".DialogActivity" />
         <activity android:name=".TimerActivity" />
-        <activity android:name=".AnimatorActivity" />
         <activity android:name=".dialog2Activity" />
         <activity android:name=".LaunchActivity" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".AnimationActivity" />
+        <activity android:name=".AnimatorActivity" />
         <activity
             android:name=".ActivityA"
             android:launchMode="standard" />
@@ -37,7 +37,7 @@
         <activity
             android:name=".ActivityD"
             android:launchMode="singleInstance" />
-        <activity android:name=".dialog2Activity"></activity>
+       <!--<activity android:name=".dialog2Activity"></activity>-->
     </application>
 
 </manifest>

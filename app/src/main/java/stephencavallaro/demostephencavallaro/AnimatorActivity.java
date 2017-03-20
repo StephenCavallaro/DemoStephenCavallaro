@@ -6,15 +6,14 @@ import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.BounceInterpolator;
 import android.widget.TextView;
+
 import stephencavallaro.demostephencavallaro.util.UtilLog;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import stephencavallaro.demostephencavallaro.BaseActivity;
-import stephencavallaro.demostephencavallaro.R;
 
 public class AnimatorActivity extends BaseActivity {
 
@@ -24,7 +23,6 @@ public class AnimatorActivity extends BaseActivity {
     @OnClick(R.id.animator_trans)
     public void trans(){
         ObjectAnimator animator = ObjectAnimator.ofFloat(tv, "translationX", 0, 200, -200,0,100); //translationY
-                                                                            // value array ^
         animator.setDuration(2000);
         animator.start();
     }
@@ -52,13 +50,14 @@ public class AnimatorActivity extends BaseActivity {
             }
         });
         animator.setDuration(10000);
-        animator.setInterpolator(new AccelerateInterpolator());
+        animator.setInterpolator(new BounceInterpolator());
         animator.start();
     }
     @OnClick(R.id.animator_alpha)
     public void alpha(){
         ObjectAnimator animator = ObjectAnimator.ofFloat(tv,"alpha",1,0,1);
         animator.setDuration(2000);
+        animator.setInterpolator(new BounceInterpolator());
         animator.start();
     }
     @OnClick(R.id.animator_rotation)
@@ -78,10 +77,10 @@ public class AnimatorActivity extends BaseActivity {
     }
 
     @OnClick(R.id.animator_bt_cancel)
-    public void cancleAnimator(){
-        repeatAnimator.cancel();
+    public void cancelAnimator(){
         repeatAnimator.removeAllListeners();
         repeatAnimator.removeAllUpdateListeners();
+        repeatAnimator.cancel();
     }
 
     @BindView(R.id.animator_tv)
@@ -115,30 +114,28 @@ public class AnimatorActivity extends BaseActivity {
         animator.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                UtilLog.logD("Yan","animation start");
+                UtilLog.logD("Viral","animation start");
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                UtilLog.logD("Yan","animation end");
+                UtilLog.logD("Viral","animation end");
             }
 
             @Override
             public void onAnimationCancel(Animator animation) {
-                UtilLog.logD("Yan","animation cancel");
+                UtilLog.logD("Viral","animation cancel");
             }
 
             @Override
             public void onAnimationRepeat(Animator animation) {
-                UtilLog.logD("Yan","animation repeat");
+                UtilLog.logD("Viral","animation repeat");
             }
         });
         animator.setRepeatMode(ValueAnimator.REVERSE);
-        //animator.setRepeatCount(ValueAnimator.INFINITE);
-        animator.setRepeatCount(2);
-
+        animator.setRepeatCount(ValueAnimator.INFINITE);
         animator.setInterpolator(new BounceInterpolator());
-        animator.setDuration(2000);
+        animator.setDuration(1000);
         return animator;
     }
 

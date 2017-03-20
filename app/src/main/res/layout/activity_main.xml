@@ -1,140 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/activity_main"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@android:color/black"
-tools:context="stephencavallaro.demostephencavallaro.MainActivity">
-
-<RelativeLayout
-    android:id="@+id/title_bar"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="58dp"
-    android:background="@android:color/holo_blue_bright">
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background = "@android:color/black"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="@string/app_name"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:textColor="@color/white"/>
 
-    <ImageButton
-        android:id="@+id/b5x"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/bt_style"
-        android:layout_marginLeft="12dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
 
-        />
+    tools:context="stephencavallaro.demostephencavallaro.MainActivity">
 
-    <ImageButton
-        android:id="@+id/bt5"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/bt_style_xml"
-        android:layout_marginRight="12dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width = "match_parent"
+        android:layout_height = "58dp"
+        android:background = "@android:color/holo_blue_bright">
 
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/app_name"
+            android:textSize = "30sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor= "@color/white"/>
 
-</RelativeLayout>
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/bt_style"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
 
-<LinearLayout
-    android:id="@+id/tool_bar"
-    android:layout_width="match_parent"
-    android:layout_height="58dp"
-    android:layout_alignParentBottom="true"
-    android:orientation="horizontal"
-    android:background="@android:color/holo_green_light">
+        <ImageButton
+            android:id="@+id/bt4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bt_style_xml"
+            android:layout_marginRight="12dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
 
-    <ImageButton
-        android:id="@+id/bt1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_margin="6dp"
-        android:layout_weight="1"
-        android:background="@android:color/white"
+        <!--<ImageButton
+            android:id="@+id/main_right_bt"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bt_style_xml"
+            android:layout_marginRight="12dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />-->
 
-        />
 
-    <ImageButton
-        android:id="@+id/bt2"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_margin="6dp"
-        android:layout_weight="1"
-        android:background="@android:color/white"
+    </RelativeLayout>
 
-        />
 
-    <ImageButton
-        android:id="@+id/bt3"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_margin="6dp"
-        android:layout_weight="1"
-        android:background="@android:color/white"
 
-        />
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_green_light">
 
-<!--<ListView-->
-    <!--android:layout_above="@id/tool_bar"-->
-    <!--android:layout_below="@id/title_bar"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:background="@color/white"></ListView>-->
+        <ImageButton
+            android:id="@+id/bt1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight = "1"
+            android:layout_margin="6dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/bt2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight = "1"
+            android:layout_margin="6dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            />
+
+
+        <!-- each time onClick is used, java searches all documents for it -->
+        <ImageButton
+            android:id="@+id/bt3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight = "1"
+            android:layout_margin="6dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"/>
+
+
+
+    </LinearLayout>
 
     <FrameLayout
-        android:layout_above="@id/tool_bar"
+        android:id="@+id/main_fl"
         android:layout_below="@id/title_bar"
+        android:layout_above="@id/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        >
+        android:background="@color/white">
+
 
         <Button
             android:id="@+id/main_timer_bt"
             android:layout_width="100dp"
             android:layout_height="60dp"
-            android:layout_margin="6dp"
-            android:layout_weight="1"
             android:text="Timer"
-            android:textAllCaps="false"
-            android:textSize="20sp"/>
+            android:textAllCaps="false" android:textSize="20sp"
+            />
 
         <Button
-            android:id="@+id/main_animator_bt"
-            android:layout_width="150dp"
-            android:layout_margin="6dp"
-            android:layout_weight="1"
+            android:id="@+id/main_anim_bt"
+            android:layout_width="100dp"
             android:layout_height="60dp"
-            android:layout_gravity="right"
+            android:text="Animation"
+            android:layout_marginLeft="100dp"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            />
+
+        <Button
+            android:id="@+id/animator_bt"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
             android:text="Animator"
+            android:layout_marginLeft="200dp"
             android:textAllCaps="false"
-            android:textSize="20sp"/>
+            android:textSize="15sp"
+            />
 
-        <Button
-            android:id="@+id/dialog2Activity"
-            android:layout_width="200dp"
-            android:layout_margin="6dp"
-            android:layout_weight="1"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom"
-            android:text="dialog2Activity"
-            android:textAllCaps="false"
-            android:textSize="20sp"/>
-
+        <!--<Button-->
+            <!--android:id="@+id/custom_bt"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="CustomDialog"-->
+            <!--android:layout_marginTop="60dp"/>-->
     </FrameLayout>
+
+
 
 </RelativeLayout>
