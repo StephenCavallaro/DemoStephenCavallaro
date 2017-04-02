@@ -4,37 +4,32 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background = "@android:color/black"
-
-
-
+    android:background="@android:color/black"
     tools:context="stephencavallaro.demostephencavallaro.MainActivity">
+    >
 
     <RelativeLayout
-        android:id="@+id/title_bar"
-        android:layout_width = "match_parent"
-        android:layout_height = "58dp"
-        android:background = "@android:color/holo_blue_bright">
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@android:color/holo_blue_bright">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/app_name"
-            android:textSize = "30sp"
+            android:textSize="30sp"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:textColor= "@color/white"/>
+            android:textColor="@color/white"/>
 
         <ImageButton
+            android:id="@+id/toggle_anim"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@android:color/transparent"
-            android:layout_marginLeft="12dp"
             android:src="@drawable/bt_style"
+            android:layout_marginLeft="12dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"/>
 
@@ -45,111 +40,246 @@
             android:background="@drawable/bt_style_xml"
             android:layout_marginRight="12dp"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            />
-
-        <!--<ImageButton
-            android:id="@+id/main_right_bt"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@drawable/bt_style_xml"
-            android:layout_marginRight="12dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            />-->
-
+            android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
 
-
-
-
     <LinearLayout
-        android:id="@+id/tool_bar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
         android:background="@android:color/holo_green_light">
 
         <ImageButton
             android:id="@+id/bt1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight = "1"
             android:layout_margin="6dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/white"/>
+            android:layout_weight="1"
+            android:background="@android:color/white"/>
 
         <ImageButton
             android:id="@+id/bt2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight = "1"
             android:layout_margin="6dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/white"
-            />
+            android:layout_weight="1"
+            android:background="@android:color/white"/>
 
-
-        <!-- each time onClick is used, java searches all documents for it -->
         <ImageButton
             android:id="@+id/bt3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight = "1"
             android:layout_margin="6dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/white"/>
-
-
-
+            android:layout_weight="1"
+            android:background="@android:color/white"/>
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/main_fl"
-        android:layout_below="@id/title_bar"
-        android:layout_above="@id/tool_bar"
+    <ListView
+        android:layout_above="@id/toolbar"
+        android:layout_below="@id/titlebar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"></ListView>
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titlebar"
+        android:layout_above="@+id/toolbar"
         android:background="@color/white">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/main_timer_bt"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:text="Timer"
-            android:textAllCaps="false" android:textSize="20sp"
-            />
+            <LinearLayout
+                android:id="@+id/LayoutMain"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
 
-        <Button
-            android:id="@+id/main_anim_bt"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:text="Animation"
-            android:layout_marginLeft="100dp"
-            android:textAllCaps="false"
-            android:textSize="15sp"
-            />
+                <Button
+                    android:id="@+id/main_timer_bt"
+                    android:layout_width="125dp"
+                    android:layout_height="60dp"
+                    android:text="Timer"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/animator_bt"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:text="Animator"
-            android:layout_marginLeft="200dp"
-            android:textAllCaps="false"
-            android:textSize="15sp"
-            />
+                <Button
+                    android:id="@+id/main_animation_bt"
+                    android:layout_width="130dp"
+                    android:layout_height="60dp"
+                    android:text="Animation"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
 
-        <!--<Button-->
-            <!--android:id="@+id/custom_bt"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="CustomDialog"-->
-            <!--android:layout_marginTop="60dp"/>-->
+                <Button
+                    android:id="@+id/animator_bt"
+                    android:layout_width="125dp"
+                    android:layout_height="60dp"
+                    android:text="Animator"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/LL1">
+
+                <Button
+                    android:id="@+id/FinalQuiz"
+                    android:layout_width="380dp"
+                    android:layout_height="60dp"
+                    android:text="Final Quiz"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
     </FrameLayout>
+    <LinearLayout
+        android:id="@+id/MyActivities"
+        android:layout_width="190dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titlebar"
+        android:background="@android:color/black"
+        android:layout_marginLeft="-325dp"
+        android:orientation="vertical">
 
+        <Button
+            android:id="@+id/viewPagerActivity"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:layout_height="50dp"
+            android:text="ViewPager Activity"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:background="@color/black"
+            />
 
+        <Button
+            android:id="@+id/dialogActivity"
+            android:layout_width="150dp"
+            android:background="@color/black"
+            android:layout_gravity="center"
+            android:layout_height="50dp"
+            android:text="Dialog Activity"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/listViewActivity"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:layout_height="50dp"
+            android:background="@color/black"
+            android:text="ListView Activity"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/animationActivity"
+            android:layout_width="150dp"
+            android:background="@color/black"
+            android:layout_height="50dp"
+            android:text="Animation"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/animatorActivity"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@color/black"
+            android:text="Animator"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:id="@+id/timerActivity"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Timer Activity"
+            android:background="@color/black"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:id="@+id/ActA_Btt"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:layout_height="50dp"
+            android:text="A Activity"
+            android:background="@color/black"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:id="@+id/ActB_Btt"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="B Activity"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:background="@color/black"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:id="@+id/ActC_Btt"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:background="@color/black"
+            android:layout_height="50dp"
+            android:text="C Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:id="@+id/ActD_Btt"
+            android:layout_width="150dp"
+            android:background="@color/black"
+            android:layout_gravity="center"
+            android:layout_height="50dp"
+            android:text="D Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
 
 </RelativeLayout>
+    <!--&lt;!&ndash; Side navigation drawer UI &ndash;&gt;-->
+
+    <!--<android.support.v4.widget.DrawerLayout-->
+    <!--android:id="@+id/drawer_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_below="@+id/title_bar"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<ListView-->
+    <!--android:id="@+id/navList"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="left|start"-->
+    <!--android:background="@color/black"-->
+    <!--/>-->
+    <!--</android.support.v4.widget.DrawerLayout>-->

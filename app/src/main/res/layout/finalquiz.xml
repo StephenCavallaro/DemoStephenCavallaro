@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="400dp"
+    android:layout_height="200dp"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Final Quiz"
+        android:textSize="36sp"
+        tools:text="Option 1" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/white"/>
+
+    <RadioGroup
+        android:id="@+id/rdg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/line"
+        android:layout_above="@+id/bottom"
+        >
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="option 2" />
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="option 1" />
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.36"
+            android:text="cancel"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/dialog_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2."
+            android:text="ok"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:text=" button " />
+
+
+
+
+</LinearLayout>
